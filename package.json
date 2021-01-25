@@ -1,6 +1,6 @@
 {
   "name": "@excelwithbusiness/webmobile-cms-components",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Shared CMS React components for Static GraphCms pages, used in Filtered products",
   "repository": {
     "type": "git",
