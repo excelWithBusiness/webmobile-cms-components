@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import { HeaderContent, AppHeaderProps } from '@excelwithbusiness/webmobile-sc-components';
-export interface CmsAppHeaderProps extends AppHeaderProps {
+import { HeaderContent } from '@excelwithbusiness/webmobile-sc-components';
+export interface CmsAppHeaderProps {
     socialSharing: JSX.Element;
     headerContent: HeaderContent;
     button: {

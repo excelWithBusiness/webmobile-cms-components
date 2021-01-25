@@ -6,7 +6,7 @@ var orientation = {
 };
 var StyledChildContainer = styled.div.withConfig({
   displayName: "CallToActionPanel__StyledChildContainer",
-  componentId: "hnmvdm-0"
+  componentId: "sc-1y8ycr7-0"
 })(["display:flex;flex:0 1 auto;padding:", ";"], function (_ref) {
   var theme = _ref.theme;
   return theme.spacing.base.md;
