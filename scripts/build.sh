@@ -18,7 +18,7 @@ else
 fi
 
 # build the app
-yarn build
+yarn build:noPreBuild
 if [ $? -eq 0 ]
 then
     echo "**********************************************************"

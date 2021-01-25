@@ -2,10 +2,9 @@ import React, { FC } from 'react'
 import {
   AppHeaderComponent as Header,
   HeaderContent,
-  AppHeaderProps,
 } from '@excelwithbusiness/webmobile-sc-components'
 
-export interface CmsAppHeaderProps extends AppHeaderProps {
+export interface CmsAppHeaderProps {
   socialSharing: JSX.Element
   headerContent: HeaderContent
   button: { actionLabel: string; href: string }
@@ -28,6 +27,10 @@ export const CmsAppHeader: FC<CmsAppHeaderProps> = ({
       logoUrl={logoUrl}
       button={button}
       onLogoClick={() => onLogoClick?.()}
+      onButtonClick={() => null}
+      onLanguageChoice={() => null}
+      setFilter={() => null}
+      clearFilter={() => null}
     />
   )
 }

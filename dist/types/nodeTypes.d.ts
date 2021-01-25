@@ -1,44 +1,37 @@
-import { Zone, Text, ZONES } from '@/types';
+import { Zone } from './types';
+import ZONES from './zones';
 declare type EmptyNodeData = {};
-export interface Heading1 extends Zone {
-    nodeType: ZONES.HEADING_1;
+export interface CallToActionPanel extends Zone {
+    nodeType: ZONES.CALL_TO_ACTION_PANEL;
     data: EmptyNodeData;
-    content: Array<Text>;
 }
-export interface Heading2 extends Zone {
-    nodeType: ZONES.HEADING_2;
+export interface HeroBanner extends Zone {
+    nodeType: ZONES.HERO_BANNER;
     data: EmptyNodeData;
-    content: Array<Text>;
 }
-export interface Heading3 extends Zone {
-    nodeType: ZONES.HEADING_3;
+export interface GenericSection extends Zone {
+    nodeType: ZONES.GENERIC_SECTION;
     data: EmptyNodeData;
-    content: Array<Text>;
 }
-export interface Heading4 extends Zone {
-    nodeType: ZONES.HEADING_4;
+export interface MultiColumnSection extends Zone {
+    nodeType: ZONES.MULTI_COLUMN_SECTION;
     data: EmptyNodeData;
-    content: Array<Text>;
 }
-export interface Heading5 extends Zone {
-    nodeType: ZONES.HEADING_5;
+export interface StaticPageConnection extends Zone {
+    nodeType: ZONES.STATIC_PAGE_CONNECTION;
     data: EmptyNodeData;
-    content: Array<Text>;
 }
-export interface Heading6 extends Zone {
-    nodeType: ZONES.HEADING_6;
+export interface StaticPlaylist extends Zone {
+    nodeType: ZONES.STATIC_PLAYLIST;
     data: EmptyNodeData;
-    content: Array<Text>;
 }
-export interface Paragraph extends Zone {
-    nodeType: ZONES.PARAGRAPH;
+export interface Header extends Zone {
+    nodeType: ZONES.HEADER;
     data: EmptyNodeData;
-    content: Array<Text>;
 }
-export interface ListItem extends Zone {
-    nodeType: ZONES.LIST_ITEM;
+export interface Footer extends Zone {
+    nodeType: ZONES.FOOTER;
     data: EmptyNodeData;
-    content: Zone[];
 }
 export {};
 //# sourceMappingURL=nodeTypes.d.ts.map

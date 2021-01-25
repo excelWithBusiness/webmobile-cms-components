@@ -9,14 +9,6 @@ export interface Node {
 }
 export interface Zone extends Node {
     nodeType: ZONES;
-    content: Array<Zone | Text>;
-}
-export interface Text extends Node {
-    nodeType: 'Text';
-    value: string;
-    entries: Mark[];
-}
-export interface Mark {
-    type: string;
+    content: Array<Zone>;
 }
 //# sourceMappingURL=types.d.ts.map
