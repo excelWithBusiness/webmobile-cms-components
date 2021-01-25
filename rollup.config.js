@@ -49,7 +49,6 @@ export default [
       // components can be imported with @/components/
       alias({
         '@': __dirname + '/src',
-        '#': __dirname + '/',
         'webmobile-svg-library': '@excelwithbusiness/webmobile-svg-library',
         'webmobile-sc-components': '@excelwithbusiness/webmobile-sc-components'
       }),

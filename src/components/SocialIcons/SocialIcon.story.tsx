@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { SocialFacebook, SocialTwitter, SocialYoutube, SocialInstagram } from '@excelwithbusiness/webmobile-svg-library'
+import { SocialFacebook, SocialTwitter, SocialYouTube, SocialInstagram } from '@excelwithbusiness/webmobile-svg-library'
 import { FlexBox, Icon as SocialIcon } from '@excelwithbusiness/webmobile-sc-components'
 import Readme from './SocialIcon.readme.md'
 
@@ -36,7 +36,7 @@ storiesOf('CMS Components/SocialIcon', module)
     return (
       <FlexBox>
         <SocialIcon width={40} height={40} color="black">
-          <SocialYoutube />
+          <SocialYouTube />
         </SocialIcon>
       </FlexBox>
     )

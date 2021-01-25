@@ -17,7 +17,7 @@ const callToActionPanelMockLeft = {
   }
 }
 
-storiesOf('CMS Components/SocialIcon', module)
+storiesOf('CMS Components/CmsCallToActionPanel', module)
   .add('Right Orientation', () => {
     return (
       <CmsCallToActionPanel

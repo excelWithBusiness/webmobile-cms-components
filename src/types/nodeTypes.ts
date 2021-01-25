@@ -1,53 +1,46 @@
-import { Zone, Text, ZONES } from '@/types';
+import { Zone } from './types'
+import ZONES from './zones'
 
-declare type EmptyNodeData = {};
+declare type EmptyNodeData = {}
 
-export interface Heading1 extends Zone {
-  nodeType: ZONES.HEADING_1;
-  data: EmptyNodeData;
-  content: Array<Text>;
+export interface CallToActionPanel extends Zone {
+  nodeType: ZONES.CALL_TO_ACTION_PANEL
+  data: EmptyNodeData
 }
 
-export interface Heading2 extends Zone {
-  nodeType: ZONES.HEADING_2;
-  data: EmptyNodeData;
-  content: Array<Text>;
+export interface HeroBanner extends Zone {
+  nodeType: ZONES.HERO_BANNER
+  data: EmptyNodeData
 }
 
-export interface Heading3 extends Zone {
-  nodeType: ZONES.HEADING_3;
-  data: EmptyNodeData;
-  content: Array<Text>;
+export interface GenericSection extends Zone {
+  nodeType: ZONES.GENERIC_SECTION
+  data: EmptyNodeData
 }
 
-export interface Heading4 extends Zone {
-  nodeType: ZONES.HEADING_4;
-  data: EmptyNodeData;
-  content: Array<Text>;
+export interface MultiColumnSection extends Zone {
+  nodeType: ZONES.MULTI_COLUMN_SECTION
+  data: EmptyNodeData
 }
 
-export interface Heading5 extends Zone {
-  nodeType: ZONES.HEADING_5;
-  data: EmptyNodeData;
-  content: Array<Text>;
+export interface StaticPageConnection extends Zone {
+  nodeType: ZONES.STATIC_PAGE_CONNECTION
+  data: EmptyNodeData
 }
 
-export interface Heading6 extends Zone {
-  nodeType: ZONES.HEADING_6;
-  data: EmptyNodeData;
-  content: Array<Text>;
+export interface StaticPlaylist extends Zone {
+  nodeType: ZONES.STATIC_PLAYLIST
+  data: EmptyNodeData
 }
 
-export interface Paragraph extends Zone {
-  nodeType: ZONES.PARAGRAPH;
-  data: EmptyNodeData;
-  content: Array<Text>;
+export interface Header extends Zone {
+  nodeType: ZONES.HEADER
+  data: EmptyNodeData
 }
 
-export interface ListItem extends Zone {
-  nodeType: ZONES.LIST_ITEM;
-  data: EmptyNodeData;
-  content: Zone[];
+export interface Footer extends Zone {
+  nodeType: ZONES.FOOTER
+  data: EmptyNodeData
 }
 
-export {};
+export {}
