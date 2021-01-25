@@ -1,35 +1,35 @@
 export const header = {
-  "data": {
-    "header": {
-      "id": "ckk9wukcwfmom0b06fgfdjmyn",
-      "type": 'Header',
-      "links": [
+  data: {
+    header: {
+      id: 'ckk9wukcwfmom0b06fgfdjmyn',
+      type: 'Header',
+      links: [
         {
-          "actionLabel": "FAQ’s",
-          "to": "/faqs",
-          "href": null
+          actionLabel: 'FAQ’s',
+          to: '/faqs',
+          href: null,
         },
         {
-          "actionLabel": "Who we are",
-          "to": "/about-us",
-          "href": null
+          actionLabel: 'Who we are',
+          to: '/about-us',
+          href: null,
         },
         {
-          "actionLabel": "Register or login",
-          "to": null,
-          "href": "http://google.co.uk"
-        }
+          actionLabel: 'Register or login',
+          to: null,
+          href: 'http://google.co.uk',
+        },
       ],
-      "searchBar": {
+      searchBar: {
         enabled: false,
-        placeholder: ''
+        placeholder: '',
       },
-      "filter": {
+      filter: {
         enabled: false,
-        placeholder: ''
+        placeholder: '',
       },
-      "menus": [],
-      "languages": []
+      menus: [],
+      languages: [],
     },
   },
 }

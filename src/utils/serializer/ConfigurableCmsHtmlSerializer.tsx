@@ -35,6 +35,7 @@ export const ConfigurableCmsHtmlSerializer = (customProps: SerializerCustomProps
     [ZONES.HEADER]: (node: any, children: any) => (
       <CmsAppHeader
         headerContent={node.data.header}
+        button={node.data.button}
         socialSharing={<></>}
         logoUrl={node.data.url}
         onLogoClick={() => null}

@@ -1,7 +1,5 @@
-
 export * from './components/CmsAppHeader'
 export * from './components/CmsAppFooter'
-export * from './components/SocialIcons'
 export * from './components/CallToActionPanel'
 
 export * from './utils'

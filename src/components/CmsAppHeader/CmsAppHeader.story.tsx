@@ -23,6 +23,7 @@ storiesOf('CMS Components/AppHeader', module).add('Default', () => {
       headerContent={header.data.header}
       logoUrl={logoData?.logo.url}
       onLogoClick={action('Logo')}
+      button={{ actionLabel: 'Log Out', href: '#' }}
     />
   )
 })
