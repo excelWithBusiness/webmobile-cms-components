@@ -19,6 +19,4 @@ export interface AppMetaProps {
   preconnectLinkList?: string[]
   prefetchLinkList?: string[]
   additionalMetas?: AdditionalMeta[]
-  includeStoreInTitle?: boolean
-  storeName?: string
 }

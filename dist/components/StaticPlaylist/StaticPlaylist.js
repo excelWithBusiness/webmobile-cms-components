@@ -42,8 +42,8 @@ export var StaticPlaylist = function StaticPlaylist(_ref2) {
       _onBookmarkClick = _ref2.onBookmarkClick;
   var history = useHistory();
   return React.createElement(Row, {
-    id: playlistId,
-    "data-name": playlistName
+    id: id,
+    "data-name": name
   }, React.createElement(Cell, {
     columns: 12
   }, React.createElement(ScrollAssetCarousel, {
@@ -64,7 +64,7 @@ export var StaticPlaylist = function StaticPlaylist(_ref2) {
     },
     onBookmarkClick: function onBookmarkClick(_ref3) {
       var asset = _ref3.asset;
-      return _onBookmarkClick === null || _onBookmarkClick === void 0 ? void 0 : _onBookmarkClick(asset.id, !asset.interaction.bookmarked, playlistId);
+      return _onBookmarkClick === null || _onBookmarkClick === void 0 ? void 0 : _onBookmarkClick(asset.id, !asset.interaction.bookmarked, id);
     },
     onAssetClick: function onAssetClick(_ref4) {
       var asset = _ref4.asset;

@@ -37,9 +37,7 @@ export const AppMeta: React.FC<AppMetaProps> = ({
   storeName = '',
   children,
 }) => {
-  const {
-    outlet: { locale },
-  } = useConfig()
+
   const additionalMeta: AdditionalMeta[] = additionalMetas.map((meta, index) => ({
     key: index.toString(),
     ...meta,
@@ -76,7 +74,7 @@ export const AppMeta: React.FC<AppMetaProps> = ({
     <Helmet
       titleTemplate={titleTemplate}
       defaultTitle={title || ''}
-      htmlAttributes={{ lang: locale }}>
+      htmlAttributes={{ lang: "en-GB" }}>
       {meta.map((entry, index) => {
         return <meta key={index} {...entry} />
       })}
