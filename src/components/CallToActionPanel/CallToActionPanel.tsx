@@ -1,82 +1,86 @@
-import React, { FC } from 'react'
+import React, {FC} from 'react';
 import {
-  Button,
-  CopyText,
-  Heading,
-  Image,
-  ImageAndText,
-  ImageAndTextProps,
-  styled,
-} from '@excelwithbusiness/webmobile-sc-components'
+    Button,
+    CallToActionPanel,
+    CopyText,
+    Heading,
+    Image,
+    Spacer,
+    styled,
+} from '@excelwithbusiness/webmobile-sc-components';
 
 export type SelectableOrientation = 'left' | 'right'
 
 const orientation: { [key in SelectableOrientation]: SelectableOrientation } = {
-  right: 'right',
-  left: 'left',
-}
+    right: 'right',
+    left: 'left',
+};
 
 type CmsButton = {
-  id: string
-  text: string
-  link?: string | undefined
-  type: string | undefined
+    id: string
+    text: string
+    link?: string | undefined
+    type: string | undefined
 }
 
 export interface CmsImage {
-  id: string
-  url: string
-  alt?: string
-  fileName?: string
-  mimeType?: string
-  width?: number
-  height?: number
-  size?: number
-  type?: string | undefined
+    id: string
+    url: string
+    alt?: string
+    fileName?: string
+    mimeType?: string
+    width?: number
+    height?: number
+    size?: number
+    type?: string | undefined
 }
 
-type CallToActionPanel = {
-  type: string
-  id: string
-  button: CmsButton
-  description: string
-  heading: string
-  image: Image | undefined
-  rightOrientation: string
-  title: string
+export interface CmsCallToActionPanel {
+    type: string
+    id: string
+    button: CmsButton
+    description: string
+    heading: string
+    image: Image | undefined
+    rightOrientation: string
+    title: string
 }
 
 export interface CmsCallToActionPanelProps extends ImageAndTextProps {
-  content: CallToActionPanel
+    content: CmsCallToActionPanel
 }
 
 const StyledChildContainer = styled.div`
-  display: flex;
-  flex: 0 1 auto;
-  padding: ${({ theme }) => theme.spacing.base.md};
-`
+    display: flex;
+    flex-direction: column;
+    padding: ${({theme}) => theme.spacing.base.xs};
+`;
 
 export const CmsCallToActionPanel: FC<CmsCallToActionPanelProps> = ({
-  content,
-  svg,
-  withLQIP = false,
-}): JSX.Element => {
-  // use the ID from the Instance to query CallToActionPanel
-  const alignment = content?.rightOrientation ? orientation.right : orientation.left
+                                                                        content,
+                                                                        svg,
+                                                                        withLQIP = false,
+                                                                    }): JSX.Element => {
+    const alignment = content?.rightOrientation ? orientation.right : orientation.left;
 
-  return (
-    <ImageAndText alignment={alignment} image={content?.image} svg={svg} withLQIP={withLQIP}>
-      <StyledChildContainer>
-        <Heading scale="level-1" tag="h1" weight="regular" margin="0">
-          {content?.heading}
-        </Heading>
-        <CopyText tag="p" padding="md 0" margin="0 md" color="grey5" display="flex">
-          {content?.description}
-        </CopyText>
-        <Button actionType="primary" size="md" weight="bold" href={content?.button.link}>
-          {content?.button.text}
-        </Button>
-      </StyledChildContainer>
-    </ImageAndText>
-  )
-}
+    return (
+        <React.Fragment>
+            <CallToActionPanel alignment={alignment} image={content?.image ?? null}
+                               svg={!content?.image && svg} withLQIP={withLQIP}>
+                <StyledChildContainer>
+                    <Heading scale="level-1" tag="h1" weight="regular" margin="0 0 xxl"
+                             textAlign="left">
+                        {content?.heading}
+                    </Heading>
+                    <CopyText tag="div" padding="0" margin="0" color="grey5" display="flex"
+                              textAlign="left">
+                        {content?.description}
+                    </CopyText>
+                    {content?.button && (<Button actionType="primary" size="md" weight="bold"
+                                                 href={content?.button.link}>{content?.button.text}</Button>)}
+                </StyledChildContainer>
+            </CallToActionPanel>
+            <Spacer size="md" />
+        </React.Fragment>
+    );
+};
