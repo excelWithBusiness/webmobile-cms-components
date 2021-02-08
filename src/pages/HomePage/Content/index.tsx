@@ -20,8 +20,8 @@ export const Content = ({slices}: { slices: any[] }) => {
           case 'PlaylistSection':
             console.log('matched PlaylistSection')
             return <StaticPlaylist key={keyProp} name={slice.name}
-                                   title={slice.pageComponents.sectionName}
-                                   type={slice.pageComponents.sectionType}
+                                   title={slice.pageComponents.name}
+                                   type={slice.pageComponents.__typename}
                                    id={slice.id}
                                    loading={!slice.pageComponents.staticPlaylists[0]}
                                    tooltip="Not found where this us yet!!"
