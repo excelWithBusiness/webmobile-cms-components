@@ -10,13 +10,10 @@ import {
   styled,
   ToolTip,
 } from 'webmobile-sc-components';
-import {PlaylistHeader} from "./PlaylistHeader";
 import {useHistory} from 'react-router-dom';
 
 export const StyledToolTip = styled(ToolTip)
-  `
-    z-index: 10;
-  `;
+  `z-index: 10;`;
 
 export const PlaylistHeader = ({title, toolTip, name}) => (
   <>
