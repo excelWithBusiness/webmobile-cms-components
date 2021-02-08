@@ -35,7 +35,7 @@ export interface CmsImage {
     type?: string | undefined
 }
 
-export interface CallToActionPanel {
+export interface CmsCallToActionPanelProps {
     type: string
     id: string
     button: CmsButton
@@ -47,7 +47,7 @@ export interface CallToActionPanel {
 }
 
 export interface CmsCallToActionPanelProps extends ImageAndTextProps {
-    content: CallToActionPanel
+    content: CmsCallToActionPanelProps
 }
 
 const StyledChildContainer = styled.div`

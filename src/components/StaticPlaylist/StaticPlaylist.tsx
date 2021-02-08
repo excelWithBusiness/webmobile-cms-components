@@ -47,16 +47,16 @@ export const PlaylistHeader = ({title, toolTip, name}) => (
 
 
 export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
-          loading,
-                                             assets,
-                                             type,
-          loading,
-          id,
-          name,
-                                             title, tooltip, desktop,
-          onSlideChange,
-                                             onBookmarkClick,
-        }): JSX.Element => {
+                                                                      loading,
+                                                                      assets,
+                                                                      type,
+
+                                                                      id,
+                                                                      name,
+                                                                      title, tooltip, desktop,
+                                                                      onSlideChange,
+                                                                      onBookmarkClick,
+                                                                    }): JSX.Element => {
   const history = useHistory()
   return (
     <Row id={playlistId} data-name={playlistName}>
@@ -68,7 +68,7 @@ export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
           loading={!assets}
           assets={assets}
           onSlideChange={() =>
-            onSlideChange?.({ id, name })
+            onSlideChange?.({id, name})
           }
           onBookmarkClick={({asset}) =>
             onBookmarkClick?.(
