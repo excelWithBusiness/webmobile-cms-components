@@ -50,16 +50,17 @@ export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
                                                                       loading,
                                                                       assets,
                                                                       type,
-
                                                                       id,
                                                                       name,
-                                                                      title, tooltip, desktop,
+                                                                      title,
+                                                                      tooltip,
+                                                                      desktop,
                                                                       onSlideChange,
                                                                       onBookmarkClick,
                                                                     }): JSX.Element => {
   const history = useHistory()
   return (
-    <Row id={playlistId} data-name={playlistName}>
+    <Row id={id} data-name={name}>
       <Cell columns={12}>
         <ScrollAssetCarousel
           headline={title}
@@ -74,7 +75,7 @@ export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
             onBookmarkClick?.(
               asset.id,
               !asset.interaction.bookmarked,
-              playlistId
+              id
             )
           }
           onAssetClick={({asset}) =>
