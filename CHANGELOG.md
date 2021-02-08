@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.3...v0.0.4) (2021-02-08)
+
+
+### Features
+
+* exposing all the good parts ([c03472f](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/c03472fd74200737bc3b06e87ebabe02504a87ea))
+* exposing all the good parts ([7719a62](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/7719a62b568ded79d62b8ffaa675b6b0af5a019c))
+
 ### [0.0.3](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.11...v0.0.3) (2021-02-08)
 
 ### [0.0.2](https://github.com/excelWithBusiness/webmobile-cms-components/compare/v0.0.11...v0.0.2) (2021-02-08)
