@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Cell,
   Grid,
-  Offset,
   Row,
   Spacer,
 } from '@excelwithbusiness/webmobile-sc-components';
@@ -19,8 +18,7 @@ export const FaqPage: React.FC<FaqPageContentType> = ({ landingPageContent }) =>
       <Main slices={slices} />
       <Grid>
         <Row>
-          <Offset colsXs={0} columns={1} />
-          <Cell columns={10}>
+          <Cell columns={12}>
             <Spacer size="md" />
             <Content slices={slices} />
           </Cell>

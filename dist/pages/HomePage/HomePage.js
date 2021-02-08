@@ -1,7 +1,7 @@
 import React from 'react';
 import { Cell, Grid, Row, Spacer } from '@excelwithbusiness/webmobile-sc-components';
-import { Main } from "./components/Main/Main";
-import { Content } from "./components/Content";
+import { Main } from "./Main/Main";
+import { Content } from "./Content";
 export var HomePage = function HomePage(_ref) {
   var landingPageContent = _ref.landingPageContent;
   var slices = landingPageContent.slices;

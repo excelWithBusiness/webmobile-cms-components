@@ -1,18 +1,12 @@
 import React, {memo} from 'react';
 import {TopTeaser} from '@excelwithbusiness/webmobile-sc-components';
 import {Illustration01} from '@excelwithbusiness/webmobile-svg-library';
-// @ts-ignore
-import {useRenderMeasure} from '@/hooks';
-// @ts-ignore
-import {prepareHeroContentProps} from '@/app/dashboard/helpers/prepareHeroContent';
-
-const PAGE_AREA = 'TopTeaser';
+import {prepareHeroContentProps} from "../../../helpers";
 
 /**
  * This will be the TopTeaser for only a few select pages
  */
 export const Main = memo(({slices}: { slices: any[] }) => {
-  useRenderMeasure(PAGE_AREA);
   return (
     <React.Fragment>
       {slices?.map((slice: any, index: number) => {

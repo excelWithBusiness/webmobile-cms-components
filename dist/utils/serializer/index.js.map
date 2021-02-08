@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/utils/serializer/index.ts"],"names":["ConfigurableCmsHtmlSerializer"],"mappings":"AAAA,SAAQA,6BAAR","sourcesContent":["export {ConfigurableCmsHtmlSerializer} from './ConfigurableCmsHtmlSerializer'\n"],"file":"index.js"}
