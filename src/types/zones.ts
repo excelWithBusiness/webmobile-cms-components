@@ -3,7 +3,7 @@
  */
 declare enum ZONES {
   CALL_TO_ACTION_PANEL = 'CallToActionPanel',
-  HERO_BANNER = 'CallToActionPanel',
+  TOP_TEASER = 'HeroBanner',
   GENERIC_SECTION = 'GenericSection',
   MULTI_COLUMN_SECTION = 'MultiColumnSection',
   STATIC_PAGE_CONNECTION = 'StaticPageConnection',
