@@ -19,12 +19,15 @@ export const Content = ({slices}: { slices: any[] }) => {
             return <CmsCallToActionPanel content={slice.pageComponents}/>
           case 'PlaylistSection':
             console.log('matched PlaylistSection')
-            return <StaticPlaylist key={keyProp} playlistName={slice.name}
+            return <StaticPlaylist key={keyProp} name={slice.name}
                                    title={slice.pageComponents.sectionName}
-                                   playlistId={slice.id}
-                                   toolTip="Not found where this us yet!!"
+                                   type={slice.pageComponents.sectionType}
+                                   id={slice.id}
+                                   loading={!slice.pageComponents.staticPlaylists[0]}
+                                   tooltip="Not found where this us yet!!"
                                    desktop={slice.size}
-                                   staticAssets={[...slice.pageComponents.staticPlaylists[0].staticAssetTiles]}/>
+                                   assets={[...slice.pageComponents.staticPlaylists[0].staticAssetTiles]}
+            />
           default:
             return null;
         }

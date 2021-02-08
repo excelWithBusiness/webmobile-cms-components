@@ -11,6 +11,7 @@ import {
   ToolTip,
 } from 'webmobile-sc-components';
 import {useHistory} from 'react-router-dom';
+import {AssetCarouselDefaultProps} from "./StaticPlaylist.types";
 
 export const StyledToolTip = styled(ToolTip)
   `z-index: 10;`;
@@ -45,29 +46,32 @@ export const PlaylistHeader = ({title, toolTip, name}) => (
 );
 
 
-export const StaticPlaylist: React.FC = ({
+export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
           loading,
-          staticAssets,
-          playlistsLoading,
-          playlistId,
-          playlistName, title, tooltip, keyProp, desktop,
+                                             assets,
+                                             type,
+          loading,
+          id,
+          name,
+                                             title, tooltip, desktop,
           onSlideChange,
-          bookmarkMutation,
+                                             onBookmarkClick,
         }): JSX.Element => {
   const history = useHistory()
   return (
-    <Row id={playlistId} key={keyProp} data-name={playlistName}>
+    <Row id={playlistId} data-name={playlistName}>
       <Cell columns={12}>
         <ScrollAssetCarousel
-          title={<PlaylistHeader title={title} toolTip={tooltip} name={playlistName}/>}
-          loading={loading}
-          fixedArrowPositions
-          assets={staticAssets}
+          headline={title}
+          data-test="landing-page-playlist"
+          title={<PlaylistHeader title={title} toolTip={tooltip} name={name}/>}
+          loading={!assets}
+          assets={assets}
           onSlideChange={() =>
-            onSlideChange?.({playlistId, playlistName, playlistIndex: index})
+            onSlideChange?.({ id, name })
           }
           onBookmarkClick={({asset}) =>
-            bookmarkMutation?.(
+            onBookmarkClick?.(
               asset.id,
               !asset.interaction.bookmarked,
               playlistId
@@ -75,12 +79,13 @@ export const StaticPlaylist: React.FC = ({
           }
           onAssetClick={({asset}) =>
             history.push({
-              pathname: `/learning-asset/${asset.niceName}?pid_hint=${playlistId}`,
+              pathname: `/learning-asset/${asset.niceName}?pid_hint=${id}`,
             })
           }
-          context={playlistName}
+          context={name}
           lazyLoad
           showArrows
+          withLQIP
           tileMargin="md"
           slidesPerPageSettings={{
             desktop,
