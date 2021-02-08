@@ -35,12 +35,14 @@ export var Content = function Content(_ref) {
         console.log('matched PlaylistSection');
         return React.createElement(StaticPlaylist, {
           key: keyProp,
-          playlistName: slice.name,
-          title: slice.pageComponents.sectionName,
-          playlistId: slice.id,
-          toolTip: "Not found where this us yet!!",
+          name: slice.name,
+          title: slice.pageComponents.name,
+          type: slice.pageComponents.__typename,
+          id: slice.id,
+          loading: !slice.pageComponents.staticPlaylists[0],
+          tooltip: "Not found where this us yet!!",
           desktop: slice.size,
-          staticAssets: _toConsumableArray(slice.pageComponents.staticPlaylists[0].staticAssetTiles)
+          assets: _toConsumableArray(slice.pageComponents.staticPlaylists[0].staticAssetTiles)
         });
 
       default:

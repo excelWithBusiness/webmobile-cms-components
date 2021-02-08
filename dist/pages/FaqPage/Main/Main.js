@@ -17,6 +17,7 @@ export var Main = memo(function (_ref) {
       case 'HeroBanner':
         var heroProps = slice.pageComponents ? prepareHeroContentProps(slice.pageComponents) : null;
         return heroProps && React.createElement(TopTeaser, {
+          key: keyProp,
           link: null,
           color: !(heroProps !== null && heroProps !== void 0 && heroProps.heroImages) && 'primary',
           heroImages: heroProps === null || heroProps === void 0 ? void 0 : heroProps.heroImages,

@@ -31,52 +31,51 @@ export var PlaylistHeader = function PlaylistHeader(_ref) {
 };
 export var StaticPlaylist = function StaticPlaylist(_ref2) {
   var loading = _ref2.loading,
-      staticAssets = _ref2.staticAssets,
-      playlistsLoading = _ref2.playlistsLoading,
-      playlistId = _ref2.playlistId,
-      playlistName = _ref2.playlistName,
+      assets = _ref2.assets,
+      type = _ref2.type,
+      id = _ref2.id,
+      name = _ref2.name,
       title = _ref2.title,
       tooltip = _ref2.tooltip,
-      keyProp = _ref2.keyProp,
       desktop = _ref2.desktop,
       _onSlideChange = _ref2.onSlideChange,
-      bookmarkMutation = _ref2.bookmarkMutation;
+      _onBookmarkClick = _ref2.onBookmarkClick;
   var history = useHistory();
   return React.createElement(Row, {
     id: playlistId,
-    key: keyProp,
     "data-name": playlistName
   }, React.createElement(Cell, {
     columns: 12
   }, React.createElement(ScrollAssetCarousel, {
+    headline: title,
+    "data-test": "landing-page-playlist",
     title: React.createElement(PlaylistHeader, {
       title: title,
       toolTip: tooltip,
-      name: playlistName
+      name: name
     }),
-    loading: loading,
-    fixedArrowPositions: true,
-    assets: staticAssets,
+    loading: !assets,
+    assets: assets,
     onSlideChange: function onSlideChange() {
       return _onSlideChange === null || _onSlideChange === void 0 ? void 0 : _onSlideChange({
-        playlistId: playlistId,
-        playlistName: playlistName,
-        playlistIndex: index
+        id: id,
+        name: name
       });
     },
     onBookmarkClick: function onBookmarkClick(_ref3) {
       var asset = _ref3.asset;
-      return bookmarkMutation === null || bookmarkMutation === void 0 ? void 0 : bookmarkMutation(asset.id, !asset.interaction.bookmarked, playlistId);
+      return _onBookmarkClick === null || _onBookmarkClick === void 0 ? void 0 : _onBookmarkClick(asset.id, !asset.interaction.bookmarked, playlistId);
     },
     onAssetClick: function onAssetClick(_ref4) {
       var asset = _ref4.asset;
       return history.push({
-        pathname: "/learning-asset/".concat(asset.niceName, "?pid_hint=").concat(playlistId)
+        pathname: "/learning-asset/".concat(asset.niceName, "?pid_hint=").concat(id)
       });
     },
-    context: playlistName,
+    context: name,
     lazyLoad: true,
     showArrows: true,
+    withLQIP: true,
     tileMargin: "md",
     slidesPerPageSettings: {
       desktop: desktop,
