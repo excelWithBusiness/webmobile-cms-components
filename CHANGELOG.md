@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.5...v0.0.6) (2021-02-08)
+
+
+### Other
+
+* deleting redundent code ([4b4ddc3](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/4b4ddc366932f868c5e5d6fa2d353ddfb101fd9d))
+* deleting redundent code ([bf342d6](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/bf342d69ca79f75e747421fb0b12684331fd8b6f))
+* deleting redundent code ([58bdd15](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/58bdd1543c39bc529522572ec23827317fc44be4))
+
 ### [0.0.5](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.4...v0.0.5) (2021-02-08)
 
 
