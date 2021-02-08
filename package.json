@@ -1,6 +1,6 @@
 {
   "name": "@excelwithbusiness/webmobile-cms-landing-pages",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Shared CMS React components for Static GraphCms pages, used in Filtered products",
   "repository": {
     "type": "git",
