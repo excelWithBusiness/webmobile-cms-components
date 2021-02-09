@@ -1,9 +1,9 @@
 import React from 'react'
-import { TopicsPage as TopicsPageWithoutQuery } from './TopicsPage'
-import {TopicsPageContentType} from './TopicsPage.types'
+import { WhoWeArePage as TopicsPageWithoutQuery } from './WhoWeArePage'
+import { TopicsPageContentType } from './WhoWeArePage.types'
 
 export const TopicsPageWrapper = (props: TopicsPageContentType) => (
   <TopicsPageWithoutQuery {...props} landingPageContent={props.landingPageContent} />
 )
 
-export * from './TopicsPage.types'
+export * from './WhoWeArePage.types'

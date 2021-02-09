@@ -1,1 +1,1 @@
-export * from './StaticPlaylist';
+export * from './StaticPlaylist'

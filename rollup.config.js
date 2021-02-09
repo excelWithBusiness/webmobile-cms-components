@@ -17,7 +17,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 export default [
   // for config info go to https://rollupjs.org/guide/en/
   {
-    input: 'src/index.ts',
+    input: 'src/index.tsx',
     // CommonJS (for Node) and ES module (for bundlers) build.
     output: [
       {
@@ -34,8 +34,6 @@ export default [
       'react-dom',
       'react-router-dom',
       'styled-components',
-      '@excelwithbusiness/webmobile-sc-components',
-      '@excelwithbusiness/webmobile-svg-library',
       'enzyme',
     ],
     plugins: [

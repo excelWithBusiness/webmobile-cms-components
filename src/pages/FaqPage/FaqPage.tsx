@@ -1,16 +1,11 @@
-import React from 'react';
-import {
-  Cell,
-  Grid,
-  Row,
-  Spacer,
-} from '@excelwithbusiness/webmobile-sc-components';
-import {Main} from './Main/Main';
-import {Content} from './Content/Content';
-import {FaqPageContentType} from "./FaqPage.types";
+import React from 'react'
+import { Cell, Grid, Row, Spacer } from '@excelwithbusiness/webmobile-sc-components'
+import { Main } from './Main/Main'
+import { Content } from './Content/Content'
+import { FaqPageContentType } from './FaqPage.types'
 
 export const FaqPage: React.FC<FaqPageContentType> = ({ landingPageContent }) => {
-  const {slices} = landingPageContent;
+  const { slices } = landingPageContent
   return (
     <React.Fragment>
       {/* Add this in */}
@@ -25,5 +20,5 @@ export const FaqPage: React.FC<FaqPageContentType> = ({ landingPageContent }) =>
         </Row>
       </Grid>
     </React.Fragment>
-  );
-};
+  )
+}

@@ -62,10 +62,6 @@ export var AppMeta = function AppMeta(_ref) {
       _ref$storeName = _ref.storeName,
       storeName = _ref$storeName === void 0 ? '' : _ref$storeName,
       children = _ref.children;
-
-  var _useConfig = useConfig(),
-      locale = _useConfig.outlet.locale;
-
   var additionalMeta = additionalMetas.map(function (meta, index) {
     return _objectSpread({
       key: index.toString()
@@ -135,7 +131,7 @@ export var AppMeta = function AppMeta(_ref) {
     titleTemplate: titleTemplate,
     defaultTitle: title || '',
     htmlAttributes: {
-      lang: locale
+      lang: "en-GB"
     }
   }, meta.map(function (entry, index) {
     return React.createElement("meta", _extends({

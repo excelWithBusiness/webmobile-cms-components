@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import {
   Cell,
   CopyText,
@@ -9,27 +9,22 @@ import {
   ScrollAssetCarousel,
   styled,
   ToolTip,
-} from 'webmobile-sc-components';
-import {useHistory} from 'react-router-dom';
-import {AssetCarouselDefaultProps} from "./StaticPlaylist.types";
+} from 'webmobile-sc-components'
+import { useHistory } from 'react-router-dom'
+import { AssetCarouselDefaultProps } from './StaticPlaylist.types'
 
-export const StyledToolTip = styled(ToolTip)
-  `z-index: 10;`;
+export const StyledToolTip = styled(ToolTip)`
+  z-index: 10;
+`
 
-export const PlaylistHeader = ({title, toolTip, name}) => (
+export const PlaylistHeader = ({ title, toolTip, name }) => (
   <>
-    <CopyText
-      limitLines={1}
-      fontSize="sm"
-      as="div"
-      display="inline-flex"
-      margin="0 sm xs 0"
-    >
+    <CopyText limitLines={1} fontSize="sm" as="div" display="inline-flex" margin="0 sm xs 0">
       {title}
     </CopyText>
     <StyledToolTip content={toolTip}>
       <Icon width="8px" height="8px">
-        <IconInfoOutlined/>
+        <IconInfoOutlined />
       </Icon>
     </StyledToolTip>
     <Heading
@@ -38,26 +33,24 @@ export const PlaylistHeader = ({title, toolTip, name}) => (
       tag="h2"
       lineHeight="sm"
       fontFamily="default"
-      weight="semibold"
-    >
+      weight="semibold">
       {name}
     </Heading>
   </>
-);
-
+)
 
 export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
-                                                                      loading,
-                                                                      assets,
-                                                                      type,
-                                                                      id,
-                                                                      name,
-                                                                      title,
-                                                                      tooltip,
-                                                                      desktop,
-                                                                      onSlideChange,
-                                                                      onBookmarkClick,
-                                                                    }): JSX.Element => {
+  loading,
+  assets,
+  type,
+  id,
+  name,
+  title,
+  tooltip,
+  desktop,
+  onSlideChange,
+  onBookmarkClick,
+}): JSX.Element => {
   const history = useHistory()
   return (
     <Row id={id} data-name={name}>
@@ -65,20 +58,14 @@ export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
         <ScrollAssetCarousel
           headline={title}
           data-test="landing-page-playlist"
-          title={<PlaylistHeader title={title} toolTip={tooltip} name={name}/>}
+          title={<PlaylistHeader title={title} toolTip={tooltip} name={name} />}
           loading={!assets}
           assets={assets}
-          onSlideChange={() =>
-            onSlideChange?.({id, name})
+          onSlideChange={() => onSlideChange?.({ id, name })}
+          onBookmarkClick={({ asset }) =>
+            onBookmarkClick?.(asset.id, !asset.interaction.bookmarked, id)
           }
-          onBookmarkClick={({asset}) =>
-            onBookmarkClick?.(
-              asset.id,
-              !asset.interaction.bookmarked,
-              id
-            )
-          }
-          onAssetClick={({asset}) =>
+          onAssetClick={({ asset }) =>
             history.push({
               pathname: `/learning-asset/${asset.niceName}?pid_hint=${id}`,
             })
@@ -97,5 +84,5 @@ export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
         />
       </Cell>
     </Row>
-  );
+  )
 }

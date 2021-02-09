@@ -33,18 +33,17 @@ export const AppMeta: React.FC<AppMetaProps> = ({
   preconnectLinkList = [],
   prefetchLinkList = [],
   additionalMetas = [],
-  includeStoreInTitle = true,
-  storeName = '',
+  includeProductInTitle = true,
+  productName = '',
   children,
 }) => {
-
   const additionalMeta: AdditionalMeta[] = additionalMetas.map((meta, index) => ({
     key: index.toString(),
     ...meta,
   }))
   const isRobotsInAdditionalMeta = additionalMeta.find(item => item.name === 'robots')
   !isRobotsInAdditionalMeta && additionalMeta.push({ name: 'robots', content: 'noindex,follow' })
-  const titleTemplate = includeStoreInTitle ? `%s | ${storeName}` : '%s'
+  const titleTemplate = includeProductInTitle ? `%s | ${productName}` : '%s'
   const meta: AdditionalMeta[] = [
     { name: 'description', content: description || '' },
     { name: 'keywords', content: keywords || '' },
@@ -56,7 +55,7 @@ export const AppMeta: React.FC<AppMetaProps> = ({
     },
     { property: 'og:type', content: type },
     { property: 'og:image', content: imageUrl },
-    { property: 'og:site_name', content: storeName },
+    { property: 'og:site_name', content: productName },
     { property: 'og:url', content: canonical },
     ...additionalMeta,
   ]
@@ -74,7 +73,7 @@ export const AppMeta: React.FC<AppMetaProps> = ({
     <Helmet
       titleTemplate={titleTemplate}
       defaultTitle={title || ''}
-      htmlAttributes={{ lang: "en-GB" }}>
+      htmlAttributes={{ lang: 'en-GB' }}>
       {meta.map((entry, index) => {
         return <meta key={index} {...entry} />
       })}

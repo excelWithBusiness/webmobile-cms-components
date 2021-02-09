@@ -1,5 +1,5 @@
-import {filteredTheme} from '@excelwithbusiness/webmobile-sc-components';
-import {ExtendedThemeType} from './types';
+import { filteredTheme } from '@excelwithbusiness/webmobile-sc-components'
+import { ExtendedThemeType } from './types'
 
 export const lightFilteredTheme: ExtendedThemeType = {
   color: {
@@ -22,7 +22,7 @@ export const lightFilteredTheme: ExtendedThemeType = {
       backgroundColor: 'grey1',
     },
   },
-};
+}
 
 export const greyFilteredTheme: ExtendedThemeType = {
   color: {
@@ -48,7 +48,7 @@ export const greyFilteredTheme: ExtendedThemeType = {
       backgroundColor: 'grey1',
     },
   },
-};
+}
 
 export const darkFilteredTheme: ExtendedThemeType = {
   color: {
@@ -74,4 +74,4 @@ export const darkFilteredTheme: ExtendedThemeType = {
       backgroundColor: 'grey1',
     },
   },
-};
+}

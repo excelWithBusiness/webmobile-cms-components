@@ -4,54 +4,42 @@ import { mount, shallow } from 'enzyme';
 import { AppMeta } from "./";
 var testLinks = ['https://t.co'];
 var testPrefetchLinks = ['https://beacon.krxd.net'];
-jest.mock('@mms/webmobile-config', function () {
-  return {
-    useConfig: function useConfig() {
-      return {
-        outlet: {
-          locale: 'de-DE'
-        },
-        isContentfulActive: false
-      };
-    }
-  };
-});
 describe('AppMeta', function () {
   it('renders without crashing', function () {
     var wrapper = shallow(React.createElement(AppMeta, null));
     expect(wrapper).toBeDefined();
   });
   it('renders with the default props if no props are given', function () {
-    var siteCanonical = 'https://www.mediamarkt.de/';
+    var siteCanonical = 'https://www.filtered.com/';
     var wrapper = mount(React.createElement(AppMeta, {
-      title: "MediaMarkt",
-      description: "MediaMarkt",
-      generator: "webmobile-pwa",
-      keywords: "webmobile-pwa",
+      title: "Filtered",
+      description: "Filtered",
+      generator: "webmobile-cms-landing-pages",
+      keywords: "webmobile-cms-landing-pages",
       type: "webpage",
       canonical: siteCanonical,
-      storeName: "MediaMarkt",
+      storeName: "Filtered",
       preconnectLinkList: testLinks,
       prefetchLinkList: testPrefetchLinks
     }));
     expect(wrapper).toBeDefined();
     var helmet = Helmet.peek();
-    expect(helmet.title).toEqual('MediaMarkt | MediaMarkt');
+    expect(helmet.title).toEqual('Filtered | Filtered');
     expect(helmet.metaTags).toEqual([{
       name: 'description',
-      content: 'MediaMarkt'
+      content: 'Filtered'
     }, {
       name: 'keywords',
-      content: 'webmobile-pwa'
+      content: 'webmobile-cms-landing-pages'
     }, {
       name: 'generator',
-      content: 'webmobile-pwa'
+      content: 'webmobile-cms-landing-pages'
     }, {
       property: 'og:title',
-      content: 'MediaMarkt'
+      content: 'Filtered'
     }, {
       property: 'og:description',
-      content: 'MediaMarkt'
+      content: 'Filtered'
     }, {
       property: 'og:type',
       content: 'webpage'
@@ -60,7 +48,7 @@ describe('AppMeta', function () {
       content: ''
     }, {
       property: 'og:site_name',
-      content: 'MediaMarkt'
+      content: 'Filtered'
     }, {
       property: 'og:url',
       content: siteCanonical
@@ -71,12 +59,6 @@ describe('AppMeta', function () {
     expect(helmet.linkTags).toEqual([{
       rel: 'canonical',
       href: siteCanonical
-    }, {
-      as: 'font',
-      rel: 'preload',
-      type: 'font/woff2',
-      crossOrigin: 'anonymous',
-      href: '/public/fonts/MMHeadlineProWebTT-Regular_subset.woff2'
     }, {
       as: 'font',
       rel: 'preload',
@@ -95,12 +77,6 @@ describe('AppMeta', function () {
       type: 'font/woff2',
       crossOrigin: 'anonymous',
       href: '/public/fonts/SourceSansPro-Regular.woff2'
-    }, {
-      as: 'font',
-      rel: 'preload',
-      type: 'font/woff2',
-      crossOrigin: 'anonymous',
-      href: '/public/fonts/MediaMarktPreise.woff2'
     }, {
       rel: 'preconnect',
       href: 'https://t.co'

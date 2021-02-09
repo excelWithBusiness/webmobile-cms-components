@@ -1,4 +1,3 @@
 export type HomePageContentType = {
-  landingPageContent: any;
-};
-
+  landingPageContent: any
+}

@@ -78,10 +78,25 @@ describe('RichText with Serializer', () => {
     const wrapper = renderWrapper([getStrongParagraph()])
     expect(wrapper.find(CopyText)).toHaveLength(2)
     // Check outer paragraph
-    expect(wrapper.find(CopyText).at(0).prop('withMargins')).toBeTruthy()
+    expect(
+      wrapper
+        .find(CopyText)
+        .at(0)
+        .prop('withMargins')
+    ).toBeTruthy()
     // Check inner strong paragraph
-    expect(wrapper.find(CopyText).at(1).prop('withMargins')).toBeFalsy()
-    expect(wrapper.find(CopyText).at(1).prop('tag')).toEqual('strong')
+    expect(
+      wrapper
+        .find(CopyText)
+        .at(1)
+        .prop('withMargins')
+    ).toBeFalsy()
+    expect(
+      wrapper
+        .find(CopyText)
+        .at(1)
+        .prop('tag')
+    ).toEqual('strong')
   })
 
   it('renders em element correctly', () => {
@@ -89,10 +104,25 @@ describe('RichText with Serializer', () => {
     const wrapper = renderWrapper([getEmParagraph()])
     expect(wrapper.find(CopyText)).toHaveLength(2)
     // Check outer paragraph
-    expect(wrapper.find(CopyText).at(0).prop('withMargins')).toBeTruthy()
+    expect(
+      wrapper
+        .find(CopyText)
+        .at(0)
+        .prop('withMargins')
+    ).toBeTruthy()
     // Check inner em paragraph
-    expect(wrapper.find(CopyText).at(1).prop('withMargins')).toBeFalsy()
-    expect(wrapper.find(CopyText).at(1).prop('tag')).toEqual('em')
+    expect(
+      wrapper
+        .find(CopyText)
+        .at(1)
+        .prop('withMargins')
+    ).toBeFalsy()
+    expect(
+      wrapper
+        .find(CopyText)
+        .at(1)
+        .prop('tag')
+    ).toEqual('em')
   })
 
   it('renders urls correctly', () => {
@@ -107,12 +137,32 @@ describe('RichText with Serializer', () => {
     // @ts-expect-error ts-migrate(2322) FIXME: Type 'any' is not assignable to type 'never'.
     const wrapper = renderWrapper([getImage()])
     expect(wrapper.find(Picture)).toHaveLength(1)
-    expect(wrapper.find(Picture).find('img').prop('src')).toEqual(
+    expect(
+      wrapper
+        .find(Picture)
+        .find('img')
+        .prop('src')
+    ).toEqual(
       'https://mms-test.cdn.prismic.io/mms-test/' +
         'df94ace81ca3fe53fde90434b330541257cbc9c9_myaccount-retention-2018-deine-nacht-in-mm.jpg'
     )
-    expect(wrapper.find(Picture).find('img').prop('alt')).toEqual('altText')
-    expect(wrapper.find(Picture).find('img').prop('width')).toEqual(1920)
-    expect(wrapper.find(Picture).find('img').prop('height')).toEqual(1080)
+    expect(
+      wrapper
+        .find(Picture)
+        .find('img')
+        .prop('alt')
+    ).toEqual('altText')
+    expect(
+      wrapper
+        .find(Picture)
+        .find('img')
+        .prop('width')
+    ).toEqual(1920)
+    expect(
+      wrapper
+        .find(Picture)
+        .find('img')
+        .prop('height')
+    ).toEqual(1080)
   })
 })

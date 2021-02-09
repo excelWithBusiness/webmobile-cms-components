@@ -5,15 +5,15 @@ import {
   Interaction,
   Provider,
   Timebox,
-  Type
+  Type,
 } from '@excelwithbusiness/webmobile-sc-components'
 
 export type AssetCarouselProps = {
   onAssetClick?: ({
-                    asset,
-                    index,
-                    context,
-                  }: {
+    asset,
+    index,
+    context,
+  }: {
     asset: Asset
     index: number
     context: string
@@ -57,7 +57,6 @@ export interface TileWrapperProps {
   withLabels?: boolean
   hideDummy?: boolean
 }
-
 
 export interface Asset {
   __typename?: string

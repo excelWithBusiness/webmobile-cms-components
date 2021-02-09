@@ -1,4 +1,3 @@
 export type TopicsPageContentType = {
-  landingPageContent: any;
-};
-
+  landingPageContent: any
+}

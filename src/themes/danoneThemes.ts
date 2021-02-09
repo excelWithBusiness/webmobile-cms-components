@@ -1,5 +1,5 @@
-import {danoneTheme} from '@excelwithbusiness/webmobile-sc-components';
-import {ExtendedThemeType} from './types';
+import { danoneTheme } from '@excelwithbusiness/webmobile-sc-components'
+import { ExtendedThemeType } from './types'
 
 export const lightDanoneTheme: ExtendedThemeType = {
   color: {
@@ -21,7 +21,7 @@ export const lightDanoneTheme: ExtendedThemeType = {
       backgroundColor: 'grey2',
     },
   },
-};
+}
 
 export const greyDanoneTheme: ExtendedThemeType = {
   color: {
@@ -47,7 +47,7 @@ export const greyDanoneTheme: ExtendedThemeType = {
       backgroundColor: 'grey2',
     },
   },
-};
+}
 
 export const darkDanoneTheme: ExtendedThemeType = {
   color: {
@@ -72,4 +72,4 @@ export const darkDanoneTheme: ExtendedThemeType = {
       backgroundColor: 'grey2',
     },
   },
-};
+}

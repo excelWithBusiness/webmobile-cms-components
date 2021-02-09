@@ -22,7 +22,7 @@ function isServerBuild() {
   return process.env.BABEL_ENV === 'server'
 }
 
-module.exports = function(api) {
+module.exports = function (api) {
   api.cache.using(() => process.env.NODE_ENV)
   const presets = [
     // use latest js and transform it for all browser support
@@ -53,8 +53,6 @@ module.exports = function(api) {
         alias: {
           '@': './src',
           '#': './',
-          'webmobile-sc-components': '@excelwithbusiness/webmobile-sc-components',
-          'webmobile-svg-library': '@excelwithbusiness/webmobile-svg-library'
         },
       },
     ],

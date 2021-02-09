@@ -1,4 +1,3 @@
 export type FaqPageContentType = {
-  landingPageContent: any;
-};
-
+  landingPageContent: any
+}

@@ -99,19 +99,19 @@ export const ConfigurablePrismicHtmlSerializer: Serializer<React.ReactNode> = (
         />
       )
     case Elements.hyperlink:
-        // only external links are supported
-        if (element.data.url) {
-          return (
-            <Link
-              href={element.data.url}
-              underline
-              inline={Boolean(customProps.inline)}
-              key={index}
-              target={element?.data?.target || '_self'}>
-              {children}
-            </Link>
-          )
-        }
+      // only external links are supported
+      if (element.data.url) {
+        return (
+          <Link
+            href={element.data.url}
+            underline
+            inline={Boolean(customProps.inline)}
+            key={index}
+            target={element?.data?.target || '_self'}>
+            {children}
+          </Link>
+        )
+      }
       break
     default:
       return null

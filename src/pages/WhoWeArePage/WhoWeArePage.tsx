@@ -1,18 +1,11 @@
-import React from 'react';
-import {
-  Cell,
-  Grid,
-  Row,
-  Spacer,
-} from '@excelwithbusiness/webmobile-sc-components';
-import {Main} from './Main/Main';
-import {Content} from './Content';
-import {TopicsPageContentType} from "./TopicsPage.types";
+import React from 'react'
+import { Cell, Grid, Row, Spacer } from '@excelwithbusiness/webmobile-sc-components'
+import { Main } from './Main/Main'
+import { Content } from './Content'
+import { TopicsPageContentType } from './WhoWeArePage.types'
 
-export const TopicsPage: React.FC<TopicsPageContentType> = ({
-  landingPageContent,
-}) => {
-  const {slices} = landingPageContent;
+export const WhoWeArePage: React.FC<TopicsPageContentType> = ({ landingPageContent }) => {
+  const { slices } = landingPageContent
 
   return (
     <React.Fragment>
@@ -29,5 +22,5 @@ export const TopicsPage: React.FC<TopicsPageContentType> = ({
         </Row>
       </Grid>
     </React.Fragment>
-  );
-};
+  )
+}
