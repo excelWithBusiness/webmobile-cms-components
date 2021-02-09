@@ -6,7 +6,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 import React, { memo } from 'react';
 import { TopTeaser } from '@excelwithbusiness/webmobile-sc-components';
-import { Illustration01 } from '@excelwithbusiness/webmobile-svg-library';
+import { Illustration01 } from 'webmobile-svg-library';
 import { prepareHeroContentProps } from "../../../helpers";
 export var Main = memo(function (_ref) {
   var slices = _ref.slices;

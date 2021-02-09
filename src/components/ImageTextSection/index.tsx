@@ -1,13 +1,8 @@
 import * as React from 'react'
 import { ImageTextSectionProps, ImageAndTextSectionField } from './ImageTextSection.types'
 import { Grid, Row, Offset, Cell, ImageAndText, ImageAlignment } from 'webmobile-sc-components'
-import {
-  ConfigurablePrismicHtmlSerializer,
-  ConfigurableContentfulHtmlSerializer,
-} from '../../helpers'
 import { CustomSection } from '../CustomSection'
-import { Serializer } from 'webmobile-common-components'
-import { useConfig } from 'webmobile-config'
+import { ConfigurablePrismicHtmlSerializer, Serializer } from '../Serializer'
 
 export * from './ImageTextSection.types'
 
@@ -17,13 +12,7 @@ export const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   sectionColor,
   primaryColor,
 }) => {
-  const { isContentfulActive } = useConfig()
-
-  const renderImageAndText = (
-    imageAndTextEntry: ImageAndTextSectionField,
-    index: number,
-    isContentfulActive: boolean
-  ) => {
+  const renderImageAndText = (imageAndTextEntry: ImageAndTextSectionField, index: number) => {
     const { image, text, imageAlignment, anchorId } = imageAndTextEntry
     return (
       <CustomSection color={sectionColor} key={index} id={anchorId}>
@@ -34,24 +23,16 @@ export const ImageTextSection: React.FC<ImageTextSectionProps> = ({
               {image ? (
                 <ImageAndText
                   image={image?.desktop ? image?.desktop : image}
-                  imageAlignment={imageAlignment as ImageAlignment}
-                  contentful={isContentfulActive}>
+                  imageAlignment={imageAlignment as ImageAlignment}>
                   {text &&
                     Serializer(
                       text,
-                      isContentfulActive,
-                      ConfigurablePrismicHtmlSerializer({ textColor, primaryColor }),
-                      ConfigurableContentfulHtmlSerializer({ textColor, primaryColor })
+                      ConfigurablePrismicHtmlSerializer({ textColor, primaryColor })
                     )}
                 </ImageAndText>
               ) : (
                 text &&
-                Serializer(
-                  text,
-                  isContentfulActive,
-                  ConfigurablePrismicHtmlSerializer({ textColor, primaryColor }),
-                  ConfigurableContentfulHtmlSerializer({ textColor, primaryColor })
-                )
+                Serializer(text, ConfigurablePrismicHtmlSerializer({ textColor, primaryColor }))
               )}
             </Cell>
           </Row>

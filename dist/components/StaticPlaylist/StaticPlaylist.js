@@ -1,5 +1,5 @@
 import React from 'react';
-import { Cell, CopyText, Heading, Icon, IconInfoOutlined, Row, ScrollAssetCarousel, styled, ToolTip } from "@excelwithbusiness/webmobile-sc-components";
+import { Cell, CopyText, Heading, Icon, IconInfoOutlined, Row, ScrollAssetCarousel, styled, ToolTip } from 'webmobile-sc-components';
 import { useHistory } from 'react-router-dom';
 export var StyledToolTip = styled(ToolTip).withConfig({
   displayName: "StaticPlaylist__StyledToolTip",

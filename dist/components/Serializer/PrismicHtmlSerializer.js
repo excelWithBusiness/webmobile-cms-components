@@ -1,6 +1,6 @@
 import React from 'react';
 import { Elements } from 'prismic-reactjs';
-import { CopyText, Link, Lists, Heading } from "@excelwithbusiness/webmobile-sc-components";
+import { CopyText, Link, Lists, Heading } from 'webmobile-sc-components';
 export var PrismicHtmlSerializer = function PrismicHtmlSerializer(type, element, content, children, key) {
   switch (type) {
     case Elements.heading1:

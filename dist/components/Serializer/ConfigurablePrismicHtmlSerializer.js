@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Elements } from 'prismic-reactjs';
-import { Picture, CopyText, Heading, Link, Typo } from "@excelwithbusiness/webmobile-sc-components";
+import { Picture, CopyText, Heading, Link, Typo } from 'webmobile-sc-components';
 export var ConfigurablePrismicHtmlSerializer = function ConfigurablePrismicHtmlSerializer() {
   var customProps = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   return function (type, element, text, children, index) {

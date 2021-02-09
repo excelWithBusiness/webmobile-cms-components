@@ -14,6 +14,7 @@ import React from 'react';
 import { Section } from '@excelwithbusiness/webmobile-sc-components';
 import { CmsCallToActionPanel } from "../../../components/CallToActionPanel";
 import { StaticPlaylist } from "../../../components/StaticPlaylist";
+import { formatToStaticAsset } from "../../../helpers";
 export var Content = function Content(_ref) {
   var slices = _ref.slices;
 
@@ -33,16 +34,23 @@ export var Content = function Content(_ref) {
 
       case 'PlaylistSection':
         console.log('matched PlaylistSection');
+
+        var staticAssets = _toConsumableArray(slice.pageComponents.staticPlaylists[0].staticAssetTiles);
+
+        var assetsToStatic = formatToStaticAsset(staticAssets);
         return React.createElement(StaticPlaylist, {
           key: keyProp,
           name: slice.name,
           title: slice.pageComponents.name,
           type: slice.pageComponents.__typename,
+          context: "StaticPlaylist",
           id: slice.id,
+          showLock: true,
+          showBookmark: false,
           loading: !slice.pageComponents.staticPlaylists[0],
           tooltip: "Not found where this us yet!!",
           desktop: slice.size,
-          assets: _toConsumableArray(slice.pageComponents.staticPlaylists[0].staticAssetTiles)
+          assets: _toConsumableArray(assetsToStatic)
         });
 
       default:

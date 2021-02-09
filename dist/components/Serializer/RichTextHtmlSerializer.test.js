@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { RichText } from 'prismic-reactjs';
-import { CopyText, Heading, Link, Picture, mountWithTheme } from "@excelwithbusiness/webmobile-sc-components";
+import { CopyText, Heading, Link, Picture, mountWithTheme } from 'webmobile-sc-components';
 import { getHeadline, getParagraph, getStrongParagraph, getEmParagraph, getUrlParagraph, getImage } from "./RichTextHtmlSerializer.mock";
 import { ConfigurablePrismicHtmlSerializer } from "./ConfigurablePrismicHtmlSerializer";
 

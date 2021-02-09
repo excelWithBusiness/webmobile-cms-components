@@ -57,10 +57,10 @@ export var AppMeta = function AppMeta(_ref) {
       prefetchLinkList = _ref$prefetchLinkList === void 0 ? [] : _ref$prefetchLinkList,
       _ref$additionalMetas = _ref.additionalMetas,
       additionalMetas = _ref$additionalMetas === void 0 ? [] : _ref$additionalMetas,
-      _ref$includeStoreInTi = _ref.includeStoreInTitle,
-      includeStoreInTitle = _ref$includeStoreInTi === void 0 ? true : _ref$includeStoreInTi,
-      _ref$storeName = _ref.storeName,
-      storeName = _ref$storeName === void 0 ? '' : _ref$storeName,
+      _ref$includeProductIn = _ref.includeProductInTitle,
+      includeProductInTitle = _ref$includeProductIn === void 0 ? true : _ref$includeProductIn,
+      _ref$productName = _ref.productName,
+      productName = _ref$productName === void 0 ? '' : _ref$productName,
       children = _ref.children;
   var additionalMeta = additionalMetas.map(function (meta, index) {
     return _objectSpread({
@@ -74,7 +74,7 @@ export var AppMeta = function AppMeta(_ref) {
     name: 'robots',
     content: 'noindex,follow'
   });
-  var titleTemplate = includeStoreInTitle ? "%s | ".concat(storeName) : '%s';
+  var titleTemplate = includeProductInTitle ? "%s | ".concat(productName) : '%s';
   var meta = [{
     name: 'description',
     content: description || ''
@@ -98,7 +98,7 @@ export var AppMeta = function AppMeta(_ref) {
     content: imageUrl
   }, {
     property: 'og:site_name',
-    content: storeName
+    content: productName
   }, {
     property: 'og:url',
     content: canonical
@@ -131,7 +131,7 @@ export var AppMeta = function AppMeta(_ref) {
     titleTemplate: titleTemplate,
     defaultTitle: title || '',
     htmlAttributes: {
-      lang: "en-GB"
+      lang: 'en-GB'
     }
   }, meta.map(function (entry, index) {
     return React.createElement("meta", _extends({

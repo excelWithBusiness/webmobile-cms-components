@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../src/types/index.ts"],"names":["default","ZONES"],"mappings":"AAAA,SAASA,OAAO,IAAIC,KAApB","sourcesContent":["export { default as ZONES } from './zones';\n"],"file":"index.js"}
+{"version":3,"sources":["../../src/types/index.ts"],"names":["default","ZONES"],"mappings":"AAAA,SAASA,OAAO,IAAIC,KAApB","sourcesContent":["export { default as ZONES } from './zones'\n"],"file":"index.js"}
