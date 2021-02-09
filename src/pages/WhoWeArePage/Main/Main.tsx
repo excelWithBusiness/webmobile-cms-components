@@ -1,6 +1,5 @@
 import React, { memo } from 'react'
-import { TopTeaser } from '@excelwithbusiness/webmobile-sc-components'
-import { Illustration01 } from 'webmobile-svg-library'
+import { TopTeaser, Illustration01 } from 'webmobile-sc-components'
 import { prepareHeroContentProps } from '../../../helpers'
 
 /**
