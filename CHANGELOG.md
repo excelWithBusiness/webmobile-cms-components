@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.9...v0.0.11) (2021-02-09)
+
+
+### Bug Fixes
+
+* linting ([c107d63](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/c107d63d4389b4ba317408d85b80985afe87f763))
+* linting issues ([0ac5c9e](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/0ac5c9e7427540fbd888db7eca818a0f368907ea))
+
+
+### Other
+
+* **release:** 0.0.10 ([3080753](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/3080753f6850c4ad39c1fd2cfa4738623f7421a8))
+
 ### [0.0.10](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.9...v0.0.10) (2021-02-09)
 
 
