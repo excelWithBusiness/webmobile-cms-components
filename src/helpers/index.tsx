@@ -44,16 +44,17 @@ const renderTextRows = (text: string) => {
   }, [])
 }
 
-export const formatToStaticAsset = assets.map(({ id, title, providerLabel, image, locked }) => {
-  return {
-    id,
-    title,
-    niceName: `${id}-${title.toLowerCase().split(' ').join('-')}`,
-    type: {
-      id: 0,
-      name: providerLabel,
-    },
-    image: image.url,
-    locked,
-  }
-})
+export const formatToStaticAsset = assets =>
+  assets.map(({ id, title, providerLabel, image, locked }) => {
+    return {
+      id,
+      title,
+      niceName: `${id}-${title.toLowerCase().split(' ').join('-')}`,
+      type: {
+        id: 0,
+        name: providerLabel,
+      },
+      image: image.url,
+      locked,
+    }
+  })

@@ -61,10 +61,10 @@ export const StaticPlaylist: React.FC<AssetCarouselDefaultProps> = ({
           title={<PlaylistHeader title={title} toolTip={tooltip} name={name} />}
           loading={!assets}
           assets={assets}
+          showBookmark={false}
+          showLock
           onSlideChange={() => onSlideChange?.({ id, name })}
-          onBookmarkClick={({ asset }) =>
-            onBookmarkClick?.(asset.id, !asset.interaction.bookmarked, id)
-          }
+          onlockClick={({ asset }) => onLockClick?.(asset.id, !asset.interaction.bookmarked, id)}
           onAssetClick={({ asset }) =>
             history.push({
               pathname: `/learning-asset/${asset.niceName}?pid_hint=${id}`,

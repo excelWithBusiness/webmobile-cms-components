@@ -1,1 +1,0 @@
-{"version":3,"sources":["../../../src/components/Serializer/index.ts"],"names":[],"mappings":"AAAA;AACA;AACA","sourcesContent":["export * from './ConfigurablePrismicHtmlSerializer'\nexport * from './HtmlSerializer'\nexport * from './PrismicHtmlSerializer'\n"],"file":"index.js"}
