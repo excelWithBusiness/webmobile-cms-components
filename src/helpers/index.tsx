@@ -45,15 +45,20 @@ const renderTextRows = (text: string) => {
 }
 
 export const formatToStaticAsset = assets =>
-  assets.map(({ id, title, providerLabel, image, locked }) => {
+  assets.map(({ id, title, providerLabel, image, locked, type, __typename }) => {
     return {
       id,
       title,
       niceName: `${id}-${title.toLowerCase().split(' ').join('-')}`,
-      type: {
+      provider: {
         id: 0,
         name: providerLabel,
       },
+      type: {
+        id: 0,
+        name: type || __typename,
+      },
+      competencies: [],
       image: image.url,
       locked,
     }

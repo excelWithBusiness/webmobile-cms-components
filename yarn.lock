@@ -1401,12 +1401,11 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@excelwithbusiness/webmobile-sc-components@^1.43.0":
-  version "1.44.0"
-  resolved "https://npm.pkg.github.com/download/@excelwithbusiness/webmobile-sc-components/1.44.0/b45ec175277a7f80cd22fbd2e4aa1eb35cd0e69974a67b7859fa88eaeffb7e92#2c2ce8f3318cdc3d74aa04852ca4908428d0e08f"
-  integrity sha512-WQBXjS/rZVqMDKyRc/x9tSM1LQWr7u8MaEs3bTvSlx1dEhMWMX6JEKLwsO8LTpGWjuzDlSHxjLI8tFBhlhnu7Q==
+"@excelwithbusiness/webmobile-sc-components@^1.45.0":
+  version "1.45.0"
+  resolved "https://npm.pkg.github.com/download/@excelwithbusiness/webmobile-sc-components/1.45.0/0ed537dc630768db1eda1426ceb2c05263cba7111f01ab4425f8ee3909ec849a#c67cd8d21fd8d2ce7866fda14adf7042aa58e3b3"
+  integrity sha512-Qv2ZUdM9jLo22c9tI2Zok5QssATxJi5R+0+b5xG/BeBcEoKa/ED5lZVjr/uvYizprnjtTguUhdIWq6l10uClhw==
   dependencies:
-    "@excelwithbusiness/webmobile-svg-library" "^0.0.14"
     "@lifarl/react-scroll-snap-slider" "^0.6.0-alpha"
     body-scroll-lock "^2.6.4"
     css-scroll-snap-polyfill "^0.1.2"
@@ -1424,13 +1423,6 @@
     styled-components "^5.1.1"
     styled-normalize "^8.0.6"
     subscribe-ui-event "^2.0.7"
-
-"@excelwithbusiness/webmobile-svg-library@^0.0.14":
-  version "0.0.14"
-  resolved "https://npm.pkg.github.com/download/@excelwithbusiness/webmobile-svg-library/0.0.14/2d69faad9ad035957399dee554ee8ad4c3b6d63d85c8736bf93f26049180345f#27e842929587eb45a14c338a26982f5e717cecc3"
-  integrity sha512-zfG9JIbNf2jyWr8rSUhEihbFO7jr6UoT7lHQXHkKt5GBzyIGPCnhm2pB/ShncNE/5p96XmmpHnK56v9XmTblow==
-  dependencies:
-    react "^16.13.1"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
