@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.15](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.14...v0.0.15) (2021-02-11)
+
+
+### Bug Fixes
+
+* remove svg library ([ef088af](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/ef088af23dd506123e52bed4c9c23d64fce685b4))
+
 ### [0.0.14](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.13...v0.0.14) (2021-02-11)
 
 
