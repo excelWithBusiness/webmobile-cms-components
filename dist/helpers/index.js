@@ -66,15 +66,22 @@ export var formatToStaticAsset = function formatToStaticAsset(assets) {
         title = _ref3.title,
         providerLabel = _ref3.providerLabel,
         image = _ref3.image,
-        locked = _ref3.locked;
+        locked = _ref3.locked,
+        type = _ref3.type,
+        __typename = _ref3.__typename;
     return {
       id: id,
       title: title,
       niceName: "".concat(id, "-").concat(title.toLowerCase().split(' ').join('-')),
-      type: {
+      provider: {
         id: 0,
         name: providerLabel
       },
+      type: {
+        id: 0,
+        name: type || __typename
+      },
+      competencies: [],
       image: image.url,
       locked: locked
     };
