@@ -1,28 +1,42 @@
-import * as React from 'react'
-import { Card, Grid, Cell, Row, Offset } from 'webmobile-sc-components'
-import { GroupRichTextSectionProps, GroupRichTextFieldType } from './GroupRichTextSection.types'
+import * as React from 'react';
+import {
+  Card,
+  Grid,
+  Cell,
+  Row,
+  Offset,
+} from '@excelwithbusiness/webmobile-sc-components';
+import {
+  GroupRichTextSectionProps,
+  GroupRichTextFieldType,
+} from './GroupRichTextSection.types';
 import {
   StyledCardRichText,
   StyledCardHeadline,
   StyledGroupRichText,
-} from './GroupRichTextSection.styled'
-import { HeadlineSection } from '../HeadlineSection'
-import { CustomSection } from '../CustomSection'
-import { ConfigurablePrismicHtmlSerializer, Serializer } from '../Serializer'
+} from './GroupRichTextSection.styled';
+import {HeadlineSection} from '../HeadlineSection';
+import {CustomSection} from '../CustomSection';
+import {Serializer, ConfigurableContentfulHtmlSerializer} from '../Serializer';
 
-export * from './GroupRichTextSection.types'
+export * from './GroupRichTextSection.types';
 
 const renderTextRows = (fields: GroupRichTextFieldType[]) => {
   return fields.map((field: GroupRichTextFieldType, index: number) => {
     return (
       field.textField && (
         <CustomSection key={index}>
-          <Grid>{Serializer(field.textField, ConfigurablePrismicHtmlSerializer({}))}</Grid>
+          <Grid>
+            {Serializer(
+              field.textField,
+              ConfigurableContentfulHtmlSerializer({})
+            )}
+          </Grid>
         </CustomSection>
       )
-    )
-  })
-}
+    );
+  });
+};
 
 export const GroupRichTextSection: React.FC<GroupRichTextSectionProps> = ({
   fields,
@@ -41,16 +55,19 @@ export const GroupRichTextSection: React.FC<GroupRichTextSectionProps> = ({
                 elevationHover={0}
                 padding="md"
                 shape="rounded-big"
-                surface="white">
+                surface="white"
+              >
                 <StyledCardHeadline>
                   <HeadlineSection headline={fields[0]?.title} />
                 </StyledCardHeadline>
-                <StyledCardRichText>{renderTextRows(fields)}</StyledCardRichText>
+                <StyledCardRichText>
+                  {renderTextRows(fields)}
+                </StyledCardRichText>
               </Card>
             </Cell>
           </Row>
         </Grid>
       </CustomSection>
     </StyledGroupRichText>
-  )
-}
+  );
+};

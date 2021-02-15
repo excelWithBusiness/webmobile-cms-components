@@ -1,13 +1,13 @@
-import { cleanup } from '@testing-library/react'
-import * as React from 'react'
-import { GroupRichTextSection } from './index'
-import { mountWithTheme, Typo } from 'webmobile-sc-components'
-import { GroupRichTextFieldType } from './GroupRichTextSection.types'
+import {cleanup} from '@testing-library/react';
+import * as React from 'react';
+import {GroupRichTextSection} from './index';
+import {mountWithTheme, Typo} from 'webmobile-sc-components';
+import {GroupRichTextFieldType} from './GroupRichTextSection.types';
 
-const mockAnchorId = 'groupTextAnchorId'
+const mockAnchorId = 'groupTextAnchorId';
 
-describe('Content:Common:Components:GroupRichTextSection', () => {
-  afterEach(cleanup)
+describe('Landing:Components:GroupRichTextSection', () => {
+  afterEach(cleanup);
 
   it('renders section with group richtext', () => {
     const groupText: GroupRichTextFieldType[] = [
@@ -37,8 +37,8 @@ describe('Content:Common:Components:GroupRichTextSection', () => {
           },
         ],
       },
-    ]
-    const sectionColor = 'grey1'
+    ];
+    const sectionColor = 'grey1';
 
     const renderCardSection = mountWithTheme(
       <GroupRichTextSection
@@ -46,12 +46,12 @@ describe('Content:Common:Components:GroupRichTextSection', () => {
         sectionColor={sectionColor}
         anchorId={mockAnchorId}
       />
-    )
+    );
 
-    const heading = renderCardSection.find('h1').last()
-    expect(heading.text()).toBe(groupText[0].title[0].text)
+    const heading = renderCardSection.find('h1').last();
+    expect(heading.text()).toBe(groupText[0].title[0].text);
 
-    const paragraph = renderCardSection.find(Typo).last()
-    expect(paragraph.text()).toBe(groupText[0].textField[1].text)
-  })
-})
+    const paragraph = renderCardSection.find(Typo).last();
+    expect(paragraph.text()).toBe(groupText[0].textField[1].text);
+  });
+});

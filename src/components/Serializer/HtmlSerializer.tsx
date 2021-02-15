@@ -1,14 +1,19 @@
-import React from 'react'
-import { RichText } from 'prismic-reactjs'
-import { PrismicHtmlSerializer } from './PrismicHtmlSerializer'
+import React from 'react';
+import {ContentfulHtmlSerializer} from './ContentfulHtmlSerializer';
 
+// @ts-ignore
 export const Serializer = (
-  content: any,
-  prismicSerializer: React.ReactNode = PrismicHtmlSerializer,
+  children: any,
+  contentfulSerializer: any = ContentfulHtmlSerializer,
   key?: number | string
 ) => {
-  if (key) {
-    return <RichText key={key} render={content} htmlSerializer={prismicSerializer} />
-  }
-  return <RichText render={content} htmlSerializer={prismicSerializer} />
-}
+  console.log('------ Serializer children -------', children);
+
+  const contentfulContent = children
+    ? Array.isArray(children) && children.length === 1 && children[0]
+      ? children[0].children
+      : children
+    : null;
+
+  return contentfulSerializer(children);
+};

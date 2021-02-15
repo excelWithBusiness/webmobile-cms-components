@@ -1,95 +1,128 @@
-import { Elements } from 'prismic-reactjs'
-import { RichTextBlock } from 'prismic-richtext'
+import {
+  Elements,
+  NodeChild,
+  RichTextBlock,
+} from '../../types/graphcms-richtext';
 
-export const getHeadline = (level = '1'): RichTextBlock => {
+export const getHeadline = (level = 'one', tag = '1'): RichTextBlock => {
   return {
-    type: `heading${level}`,
-    text: `h${level} Headline`,
-    spans: [],
-  }
-}
+    type: `heading-${level}`,
+    children: [
+      {
+        text: `h${tag} Headline`,
+      },
+    ],
+  };
+};
 
 export const getParagraph = (): RichTextBlock => {
   return {
     type: Elements.paragraph,
-    text: 'Normal text line',
-    spans: [],
-  }
-}
+    children: [
+      {
+        text:
+          'At Danone we are committed to protecting your right to privacy. We aim to protect any personal data we hold, to manage your personal data in a responsible way and to be transparent in our practices. Your trust is important to us. We have therefore committed ourselves to the following basic principles',
+      },
+    ],
+  };
+};
 
 export const getStrongParagraph = (): RichTextBlock => {
   return {
     type: Elements.paragraph,
-    text: 'Bold text line',
-    spans: [
+    children: [
       {
-        start: 0,
-        end: 14,
-        type: 'strong',
+        text: 'At ',
+      },
+      {
+        bold: true,
+        text: 'Danone',
+      },
+      {
+        text: ' we are committed to protecting your right to privacy. ',
+      },
+      {
+        bold: true,
+        text: 'We aim to protect any personal',
       },
     ],
-  }
-}
+  };
+};
 
-export const getEmParagraph = (): RichTextBlock => {
+export const getEmParagraph = () => {
   return {
     type: Elements.paragraph,
-    text: 'em text line',
-    spans: [
+    children: [
       {
-        start: 0,
-        end: 16,
-        type: 'em',
+        type: 'paragraph',
+        children: [
+          {
+            text: 'get the em text',
+            italic: true,
+          },
+        ],
       },
     ],
-  }
-}
+  };
+};
 
 export const getUrlParagraph = (): RichTextBlock => {
   return {
     type: Elements.paragraph,
-    text: 'web link text line',
-    spans: [
+    children: [
       {
-        start: 0,
-        end: 18,
-        type: 'hyperlink',
-        data: {
-          link_type: 'Web',
-          url: 'https://mediamarkt.de',
-        },
+        id: 'srghetkuyhtgrf',
+        rel: 'dsrhjtykghjhrgvd',
+        href: 'https://filtered.com',
+        type: 'link',
+        title: 'Filtered',
+        children: [
+          {
+            text: 'filtered.com',
+          },
+        ],
+        className: 'zsdfghjktuyjhtgref',
+        openInNewTab: true,
       },
     ],
-  }
-}
+  };
+};
 
-export const getImage = (): RichTextBlock => {
+export const getImage = (): NodeChild => {
   return {
+    src: 'https://media.graphcms.com/J25IRsKJSdCSPJPBNVmL',
     type: 'image',
-    url:
-      'https://mms-test.cdn.prismic.io/mms-test/' +
-      'df94ace81ca3fe53fde90434b330541257cbc9c9_myaccount-retention-2018-deine-nacht-in-mm.jpg',
-    alt: 'altText',
-    copyright: null,
-    dimensions: {
-      width: 1920,
-      height: 1080,
-    },
-  }
-}
+    title: 'presentation-software-A.jpg',
+    width: 850,
+    height: 766,
+    handle: 'J25IRsKJSdCSPJPBNVmL',
+    children: [
+      {
+        text: '',
+      },
+    ],
+    mimeType: 'image/jpeg',
+  };
+};
 
 export const getListItem = (): RichTextBlock => {
   return {
-    type: 'list-item',
-    text: 'list item (1)',
-    spans: [],
-  }
-}
-
-export const getOrderedListItem = (): RichTextBlock => {
-  return {
-    type: 'o-list-item',
-    text: 'ordered list item 1',
-    spans: [],
-  }
-}
+    type: 'bulleted-list',
+    children: [
+      {
+        type: 'list-item',
+        children: [
+          {
+            type: 'list-item-child',
+            children: [
+              {
+                text:
+                  'You have no obligation to provide any personal data requested by us. However, if you choose not to, we may not be able to provide you with some services or products;',
+              },
+            ],
+          },
+        ],
+      },
+    ],
+  };
+};

@@ -1,13 +1,7 @@
 import React, { FC } from 'react'
-import {
-  Button,
-  CallToActionPanel,
-  CopyText,
-  Heading,
-  Image,
-  Spacer,
-  styled,
-} from '@excelwithbusiness/webmobile-sc-components'
+import { CallToActionPanel, Image, Spacer } from '@excelwithbusiness/webmobile-sc-components'
+import { CustomSection } from '../CustomSection'
+import { CallToActionChild } from './CallToActionChild'
 
 export type SelectableOrientation = 'left' | 'right'
 
@@ -16,7 +10,7 @@ const orientation: { [key in SelectableOrientation]: SelectableOrientation } = {
   left: 'left',
 }
 
-type CmsButton = {
+export type CmsButton = {
   id: string
   text: string
   link?: string | undefined
@@ -35,9 +29,7 @@ export interface CmsImage {
   type?: string | undefined
 }
 
-export interface CmsCallToActionPanelProps {
-  type: string
-  id: string
+export interface CmsCallToActionPanel {
   button: CmsButton
   description: string
   heading: string
@@ -46,15 +38,11 @@ export interface CmsCallToActionPanelProps {
   title: string
 }
 
-export interface CmsCallToActionPanelProps extends ImageAndTextProps {
-  content: CmsCallToActionPanelProps
+export interface CmsCallToActionPanelProps {
+  content: Partial<CmsCallToActionPanel>
+  svg?: JSX.Element
+  withLQIP?: boolean
 }
-
-const StyledChildContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: ${({ theme }) => theme.spacing.base.xs};
-`
 
 export const CmsCallToActionPanel: FC<CmsCallToActionPanelProps> = ({
   content,
@@ -64,27 +52,19 @@ export const CmsCallToActionPanel: FC<CmsCallToActionPanelProps> = ({
   const alignment = content?.rightOrientation ? orientation.right : orientation.left
 
   return (
-    <React.Fragment>
+    <CustomSection>
       <CallToActionPanel
         alignment={alignment}
-        image={content?.image ?? null}
-        svg={!content?.image && svg}
+        image={content?.image ?? undefined}
+        svg={svg ?? undefined}
         withLQIP={withLQIP}>
-        <StyledChildContainer>
-          <Heading scale="level-1" tag="h1" weight="regular" margin="0 0 xxl" textAlign="left">
-            {content?.heading}
-          </Heading>
-          <CopyText tag="div" padding="0" margin="0" color="grey5" display="flex" textAlign="left">
-            {content?.description}
-          </CopyText>
-          {content?.button && (
-            <Button actionType="primary" size="md" weight="bold" href={content?.button.link}>
-              {content?.button.text}
-            </Button>
-          )}
-        </StyledChildContainer>
+        <CallToActionChild
+          heading={content.heading}
+          description={content.description}
+          button={content.button}
+        />
       </CallToActionPanel>
       <Spacer size="md" />
-    </React.Fragment>
+    </CustomSection>
   )
 }

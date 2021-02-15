@@ -1,9 +1,8 @@
-import { RichTextBlock } from 'prismic-reactjs'
-import { ExtendedThemeColorType } from '../../themes'
+import {ExtendedThemeColorType} from '@excelwithbusiness/webmobile-cms-landing-pages';
 
 export type HeadlineSectionProps = {
-  headline: RichTextBlock[]
-  anchorId?: string | null
-  textColor?: ExtendedThemeColorType
-  sectionColor?: ExtendedThemeColorType
-}
+  headline: any;
+  anchorId?: string | null;
+  textColor?: ExtendedThemeColorType;
+  sectionColor?: ExtendedThemeColorType;
+};

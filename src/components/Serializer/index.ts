@@ -1,3 +1,3 @@
-export * from './ConfigurablePrismicHtmlSerializer'
-export * from './HtmlSerializer'
-export * from './PrismicHtmlSerializer'
+export * from './HtmlSerializer';
+export * from './ContentfulHtmlSerializer';
+export * from './ConfigurableContentfulHtmlSerializer';

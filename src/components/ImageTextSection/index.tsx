@@ -1,10 +1,21 @@
-import * as React from 'react'
-import { ImageTextSectionProps, ImageAndTextSectionField } from './ImageTextSection.types'
-import { Grid, Row, Offset, Cell, ImageAndText, ImageAlignment } from 'webmobile-sc-components'
-import { CustomSection } from '../CustomSection'
-import { ConfigurablePrismicHtmlSerializer, Serializer } from '../Serializer'
+import * as React from 'react';
+import {
+  ImageTextSectionProps,
+  ImageAndTextSectionField,
+} from './ImageTextSection.types';
+import {
+  Grid,
+  Row,
+  Offset,
+  Cell,
+  ImageAndText,
+  ImageAlignment,
+} from 'webmobile-sc-components';
+import {CustomSection} from '../CustomSection';
+import {Serializer} from '../Serializer/HtmlSerializer';
+import {ConfigurableContentfulHtmlSerializer} from '../Serializer/ConfigurableContentfulHtmlSerializer';
 
-export * from './ImageTextSection.types'
+export * from './ImageTextSection.types';
 
 export const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   imageAndTextFields,
@@ -12,8 +23,11 @@ export const ImageTextSection: React.FC<ImageTextSectionProps> = ({
   sectionColor,
   primaryColor,
 }) => {
-  const renderImageAndText = (imageAndTextEntry: ImageAndTextSectionField, index: number) => {
-    const { image, text, imageAlignment, anchorId } = imageAndTextEntry
+  const renderImageAndText = (
+    imageAndTextEntry: ImageAndTextSectionField,
+    index: number
+  ) => {
+    const {image, text, imageAlignment, anchorId} = imageAndTextEntry;
     return (
       <CustomSection color={sectionColor} key={index} id={anchorId}>
         <Grid>
@@ -23,29 +37,37 @@ export const ImageTextSection: React.FC<ImageTextSectionProps> = ({
               {image ? (
                 <ImageAndText
                   image={image?.desktop ? image?.desktop : image}
-                  imageAlignment={imageAlignment as ImageAlignment}>
+                  imageAlignment={imageAlignment as ImageAlignment}
+                >
                   {text &&
                     Serializer(
                       text,
-                      ConfigurablePrismicHtmlSerializer({ textColor, primaryColor })
+                      ConfigurableContentfulHtmlSerializer({
+                        color: sectionColor,
+                      })
                     )}
                 </ImageAndText>
               ) : (
                 text &&
-                Serializer(text, ConfigurablePrismicHtmlSerializer({ textColor, primaryColor }))
+                Serializer(
+                  text,
+                  ConfigurableContentfulHtmlSerializer({
+                    color: sectionColor,
+                  })
+                )
               )}
             </Cell>
           </Row>
         </Grid>
       </CustomSection>
-    )
-  }
+    );
+  };
 
   return (
     <React.Fragment>
-      {imageAndTextFields.map((field, index) =>
-        renderImageAndText(field, index, isContentfulActive)
-      )}
+      {imageAndTextFields.map((field, index) => {
+        renderImageAndText(field, index);
+      })}
     </React.Fragment>
-  )
-}
+  );
+};

@@ -9,7 +9,7 @@ export interface AppMetaProps {
   title?: string | null
   description?: string | null
   generator?: string
-  keywords?: string
+  keywords?: string[]
   canonical?: string
   imageUrl?: string
   prev?: string
@@ -19,4 +19,6 @@ export interface AppMetaProps {
   preconnectLinkList?: string[]
   prefetchLinkList?: string[]
   additionalMetas?: AdditionalMeta[]
+  includeProductInTitle?: boolean
+  productName?: string
 }

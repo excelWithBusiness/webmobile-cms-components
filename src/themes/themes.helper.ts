@@ -6,24 +6,25 @@ import {
   darkFilteredTheme,
   darkDanoneTheme,
 } from './'
-import { GetExtendedThemesType } from '../types/SpecialPage.types'
+
+type GetExtendedThemesType = {}
 
 export const getExtendedThemes = (pageTheme: string | null): GetExtendedThemesType => {
   switch (pageTheme) {
     case 'dark':
       return {
-        extendedMMTheme: darkFilteredTheme,
-        extendedSETheme: darkDanoneTheme,
+        extendedFLTRTheme: darkFilteredTheme,
+        extendedDNTheme: darkDanoneTheme,
       }
     case 'grey':
       return {
-        extendedMMTheme: greyFilteredTheme,
-        extendedSETheme: greyDanoneTheme,
+        extendedFLTRTheme: greyFilteredTheme,
+        extendedDNTheme: greyDanoneTheme,
       }
     default:
       return {
-        extendedMMTheme: lightFilteredTheme,
-        extendedSETheme: lightDanoneTheme,
+        extendedFLTRTheme: lightFilteredTheme,
+        extendedDNTheme: lightDanoneTheme,
       }
   }
 }
