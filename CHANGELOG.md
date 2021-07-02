@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file. See [standa
 ### [0.0.14](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/compare/v0.0.13...v0.0.14) (2021-02-11)
 
 
+
 ### Bug Fixes
 
 * types ([53f36b0](https://github.com/excelWithBusiness/webmobile-cms-landing-pages/commit/53f36b02bc3688d6611202cb78692f410e84c46d))
